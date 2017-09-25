@@ -1,0 +1,8 @@
+{
+  "name": "react-vs-rails",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^3.6.0"
+  }
+}
