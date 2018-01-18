@@ -6,7 +6,7 @@ const paths = {
 }
 
 module.exports = {
-  entry: paths.jsx + "/app",
+  entry: paths.jsx + "/entry",
   output: {
     path: paths.js,
     filename: "react-app.js",
@@ -20,7 +20,10 @@ module.exports = {
       test: /\.jsx?$/,
       loader: "babel-loader",
       query: {
-        presets: ['react']
+        presets: ['es2015','react'],
+        "plugins": [
+          "transform-class-properties",
+        ],
       }
     }]
   },
@@ -30,7 +33,9 @@ module.exports = {
       PropTypes: "prop-types", //validate_type
       update: "react-addons-update", //addon-update-state
       t: "counterpart", //i18n
-      semantic: "semantic-ui"
+      semantic: "semantic-ui",
+      BaseComponent : paths.jsx + "/BaseComponent",
+      PageComponent : paths.jsx + "/PageComponent",
     })
   ],
 }
